@@ -3,8 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa dos Aromas</title>
+    <title>Início - Casa dos Aromas</title>
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* CSS Específico para a Homepage */
+        
+        /* 1. Secção Hero/Banner (Tela Cheia) */
+        .hero-banner {
+            padding: 0;
+            border-bottom: none;
+            position: relative;
+            min-height: 85vh; /* Altura mínima para ser visível em ecrãs grandes */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* URL da imagem do banner */
+            background-image: url('https://scontent.fopo6-2.fna.fbcdn.net/v/t39.30808-6/482218833_1259760882398882_6742136871312125712_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=7qa5WjBjRjkQ7kNvwHkLMug&_nc_oc=Adm_cJmHpboLtlvYQETY_34-lr_7fCO9pyJCnoBcJ3no1UfGdrQMrGK8T3H9jAXW2rb7ZEPW_CkvL17pLUWHYtOO&_nc_zt=23&_nc_ht=scontent.fopo6-2.fna&_nc_gid=SgYF7JgWvF4MtXdHZ_5XEA&oh=00_Afip3xurQckLXlEcOnj4DayTBbI2nGvRrDw2DF_Crho5Tw&oe=692A78D5');
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(30, 57, 42, 0.4); /* Overlay em Verde Floresta transparente */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            max-width: 90%;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content h2 {
+            font-size: clamp(2.5em, 5vw, 4.5em); /* Responsivo e grande */
+            margin-bottom: 0.2em;
+            color: #FFFFFF;
+        }
+
+        .hero-content p {
+            font-size: clamp(1.2em, 2vw, 1.8em);
+            margin-bottom: 2em;
+            color: #F0F0F0;
+        }
+        
+        .hero-content .cta-button {
+            background-color: #664229; /* Castanho Carvalho como CTA principal */
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid #664229;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .hero-content .cta-button:hover {
+            background-color: #A68B6C;
+            border-color: #A68B6C;
+            transform: scale(1.05);
+        }
+
+        /* 2. Destaques da Marca */
+        .value-blocks {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .value-block {
+            flex-basis: 100%; /* Por defeito, ocupa todo o espaço em mobile */
+            max-width: 300px;
+            text-align: center;
+            padding: 20px;
+            margin: 15px 10px;
+            border-radius: 10px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            background-color: #F9F9F9;
+        }
+        
+        /* Layout para tablet e desktop */
+        @media (min-width: 768px) {
+            .value-block {
+                flex-basis: calc(33% - 40px);
+            }
+        }
+
+        .value-block img.profile-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #1E392A; /* Borda do logo no Verde Floresta */
+        }
+        
+        .value-block h4 {
+            color: #1E392A;
+            font-size: 1.2em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .value-block p {
+            color: #664229;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        /* 3. Pré-visualização de Produtos (Mini-Galeria) */
+        .gallery-preview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .gallery-item {
+            flex-basis: 100%; /* Ocupa a largura total em mobile */
+            max-width: 350px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 600px) {
+            .gallery-item {
+                flex-basis: calc(33% - 20px);
+            }
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+        
+        .cta-center {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        
+        /* 4. Conexão Local/Contacto */
+        .contact-box {
+            background-color: #1E392A; /* Fundo Verde Floresta para contraste */
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-box h3 {
+            color: #FFFFFF;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .contact-box p {
+            color: #F0F0F0;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        .contact-box .map-button {
+            background-color: #664229; /* Castanho Carvalho para destaque */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-box .map-button:hover {
+            background-color: #8D5E3C;
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -12,25 +209,84 @@
         <nav>
             <a href="index.html">Início</a> |
             <a href="sobre.html">Sobre Nós</a> |
-            <a href="produtos.html">Produtos</a> |
+            <a href="produtos.html">Galeria</a> |
             <a href="contactos.html">Contactos</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h2>Decoração e Bricolage para transformar a tua casa</h2>
-        <p>Descobre os nossos produtos e cria ambientes únicos.</p>
+    <!-- 1. HERO SECTION (Banner de Imagem Grande) -->
+    <section class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Decoração da Casa e Artigos de Design</h2>
+            <p>Desde 1994 a decorar o seu lar com peças únicas e intemporais.</p>
+            <a href="produtos.html" class="cta-button">Ver a Galeria de Inspiração</a>
+        </div>
     </section>
 
-    <section class="destaques">
-        <h3>Produtos em destaque</h3>
-        <ul>
-            <li>Velas aromáticas</li>
-            <li>Decoração para casa</li>
-            <li>Materiais de bricolage</li>
-        </ul>
+    <!-- 2 & 3. DESTAQUES DA MARCA -->
+    <section>
+        <h2 style="text-align: center; color: #1E392A; margin-bottom: 40px;">Mais de 25 Anos de Experiência</h2>
+        <div class="value-blocks">
+            
+            <!-- Bloco 1: História e Logo -->
+            <div class="value-block">
+                <img src="https://instagram.fopo6-2.fna.fbcdn.net/v/t51.2885-19/434561944_806358088202801_440857520714758469_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby45MTkuYzIifQ&_nc_ht=instagram.fopo6-2.fna.fbcdn.net&_nc_cat=105&_nc_oc=Q6cZ2QFQoRMnpSjpAqssU9YrdqRWaSfNE8cGy7__FE0Z2cWjlbL24xuGuGuV6KGBK8XM7hKRJ5z3J-4I1zKpLOQTzS-qrQ&_nc_ohc=pwO4fIpLplQQ7kNvwEhLcLS&_nc_gid=YxTZ_Ff9mSYYP4CHFBNLSg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfjEplGMN95qcEmUAgJ4PlTTbB0j19kybaHfQr0efZFuFg&oe=692A7B07&_nc_sid=8b3546" alt="Logotipo Casa dos Aromas" class="profile-logo">
+                <h4>Tradição e Confiança</h4>
+                <p>Com mais de duas décadas de história, somos sinónimo de solidez e compromisso inabalável com a qualidade e o design intemporal.</p>
+            </div>
+            
+            <!-- Bloco 2: Produtos/Áreas -->
+            <div class="value-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#664229" stroke="#664229" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <h4>Cobertura Total do Lar</h4>
+                <p>Artigos e mobiliário selecionados para todas as divisões da casa: Salas, Quartos, **Cozinha**, **WC**, **Têxteis** e muito mais.</p>
+            </div>
+            
+            <!-- Bloco 3: Qualidade -->
+            <div class="value-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#664229" stroke="#664229" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                <h4>Inspiração Diária</h4>
+                <p>Curadoria de peças que se integram perfeitamente na sua vida, focadas em robustez e estética para um ambiente harmonioso.</p>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- 4. PRÉ-VISUALIZAÇÃO DE PRODUTOS -->
+    <section>
+        <h2 style="text-align: center; color: #1E392A; margin-bottom: 40px;">Algumas Inspirações da Nossa Galeria</h2>
+        
+        <!-- Mini-Galeria: Usando 3 URLs da página de produtos -->
+        <div class="gallery-preview">
+            <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPXOf-u1yDdUq4N5YUyL24hF1Xmw1Vs2lF4-1zd=s680-w680-h510-rw" alt="Cozinha com Bancada de Madeira">
+            </div>
+            <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNs8iYRqv2d2hQVmdkpc775A-agdUFrnEbINwQm=s680-w680-h510-rw" alt="Espelho de Parede com Moldura Dourada">
+            </div>
+            <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipO72fRYdhJenAliRbGxWHJ2QlK8EaBMgwB8m-PA=s680-w680-h510-rw" alt="Sala de Estar Acolhedora">
+            </div>
+        </div>
+        
+        <div class="cta-center">
+            <a href="produtos.html" class="cta-button" style="padding: 10px 20px;">Ver a Galeria Completa</a>
+        </div>
     </section>
 
+    <!-- 5. CONEXÃO LOCAL/CONTACTO -->
+    <div class="contact-box">
+        <h3>Visite a Nossa Loja</h3>
+        <p>Gostaria de ver os nossos artigos de perto? Estamos em Rio Tinto, à sua espera.</p>
+        <address style="font-style: normal; color: #F0F0F0; margin-bottom: 25px;">
+            Rua da Restauração 125 A, Rio Tinto, Porto, Portugal 4435-056
+        </address>
+        <!-- Link Google Maps para facilitar a navegação -->
+        <a href="https://maps.app.goo.gl/YourGoogleMapsLink" target="_blank" class="map-button">Obter Direções</a>
+    </div>
+
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2025 Casa dos Aromas | <a href="contactos.html">Contacta-nos</a></p>
     </footer>
