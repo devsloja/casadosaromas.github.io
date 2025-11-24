@@ -65,18 +65,11 @@ header {
     color: var(--color-white);
     padding: 15px 40px; 
     
-    /* Configuração Sticky - Fixa o menu no topo */
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     
-    /* LAYOUT EM GRID (Desktop) - Para centramento perfeito */
-    /* Cria 3 colunas: 
-       1. Espaço esquerdo (1fr) 
-       2. Conteúdo central ajustado ao tamanho (auto) 
-       3. Espaço direito (1fr) 
-       Isto garante que o elemento do meio fica exatamente no centro da página */
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center; 
@@ -84,9 +77,8 @@ header {
 
 /* --- ESTILOS DO LOGÓTIPO --- */
 .logo-link {
-    grid-column: 1; /* Força o logo para a primeira coluna (Esquerda) */
-    justify-self: start; /* Alinha o logo à esquerda dentro da sua coluna */
-    
+    grid-column: 1;
+    justify-self: start;
     display: block;
     line-height: 0;
     transition: transform 0.3s ease;
@@ -100,8 +92,6 @@ header {
 .logo-img {
     max-width: 150px; 
     height: auto; 
-    
-    /* Fundo branco para garantir leitura */
     background-color: var(--color-white);
     padding: 5px;
     border-radius: 4px; 
@@ -111,9 +101,8 @@ header {
 
 /* --- Navegação --- */
 header nav {
-    grid-column: 2; /* Força o menu para a coluna do meio (Centro) */
-    justify-self: center; /* Garante que o menu fica centrado */
-    
+    grid-column: 2;
+    justify-self: center;
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
@@ -150,23 +139,21 @@ header nav a:hover::after {
 }
 
 /* --- RESPONSIVIDADE DO HEADER (Mobile) --- */
-/* Quando o ecrã for menor que 900px, muda para Flexbox vertical para não encavalitar */
 @media (max-width: 900px) {
     header {
-        display: flex; /* Override do Grid para Flex no mobile */
-        flex-direction: column; /* Empilha verticalmente */
+        display: flex;
+        flex-direction: column;
         align-items: center;
         padding: 15px 20px;
         gap: 15px;
     }
     
     .logo-link {
-        /* No mobile, removemos as propriedades de grid */
         justify-self: auto;
     }
     
     header nav {
-        justify-content: center; /* Centra o menu no mobile */
+        justify-content: center;
     }
 }
 
@@ -421,7 +408,9 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
-    margin-top: 40px;
+    margin: 40px auto; /* Centrado com margem superior */
+    padding: 0 40px; /* NOVO: Espaçamento lateral para afastar da "parede" */
+    max-width: 1200px; /* Limite de largura para não esticar demasiado */
 }
 
 @media (min-width: 900px) {
