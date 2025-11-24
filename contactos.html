@@ -4,147 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos - Casa dos Aromas</title>
+    <!-- O ficheiro style.css global trata de todo o design agora -->
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* CSS Específico para a nova página de Contactos */
-        
-        /* Layout Principal em Grelha */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        @media (min-width: 900px) {
-            .contact-container {
-                grid-template-columns: 1fr 1fr; /* Duas colunas em Desktop */
-                align-items: start;
-            }
-        }
-
-        /* Estilo das Informações (Coluna Esquerda) */
-        .info-column h2 {
-            text-align: left;
-            color: #1E392A;
-            border-bottom: 2px solid #664229;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-        }
-
-        .contact-item {
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-item strong {
-            color: #1E392A;
-            min-width: 80px;
-        }
-
-        .contact-item a {
-            color: #664229;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: #A68B6C;
-            text-decoration: underline;
-        }
-
-        /* Botões de Redes Sociais */
-        .social-buttons {
-            display: flex;
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .btn-social {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            color: white;
-            transition: transform 0.2s, opacity 0.2s;
-        }
-
-        .btn-social:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-            color: white;
-        }
-
-        .btn-facebook {
-            background-color: #3b5998; /* Azul Facebook */
-        }
-
-        .btn-instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Gradiente Instagram */
-        }
-
-        /* Tabela de Horários */
-        .hours-box {
-            background-color: #f9f7f3;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 5px solid #1E392A;
-        }
-
-        .hours-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .hours-table td {
-            padding: 8px 0;
-            border-bottom: 1px dashed #dcdcdc;
-            color: #664229;
-        }
-
-        .hours-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .hours-table strong {
-            color: #1E392A;
-        }
-
-        /* Mapa (Coluna Direita) */
-        .map-column {
-            height: 100%;
-            min-height: 400px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: 1px solid #e0e0e0;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 450px; /* Altura garantida para o mapa */
-            border: 0;
-        }
-    </style>
 </head>
 <body>
+    
+    <!-- HEADER: Logótipo e Navegação (Uniformizado) -->
     <header>
-        <h1>Casa dos Aromas</h1>
+        <!-- Logótipo como Imagem e Link para a Home -->
+        <a href="index.html" class="logo-link" title="Ir para a Página Inicial">
+            <img src="imagens/Gemini_Generated_Image_ctfu3hctfu3hctfu.jpg" 
+                 alt="Logótipo Casa dos Aromas - Decoração e Design" 
+                 class="logo-img">
+        </a>
+
+        <!-- Menu de Navegação -->
         <nav>
-            <a href="index.html">Início</a> |
-            <a href="sobre.html">Sobre Nós</a> |
-            <a href="produtos.html">Galeria</a> |
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="produtos.html">Galeria</a>
             <a href="contactos.html">Contactos</a>
         </nav>
     </header>
@@ -169,7 +47,7 @@
 
                 <div class="contact-item" style="align-items: flex-start;">
                     <strong>Morada:</strong>
-                    <address style="font-style: normal; color: #664229;">
+                    <address style="font-style: normal; color: var(--color-oak-brown);">
                         Rua da Restauração 125 A,<br>
                         Rio Tinto, Porto, Portugal<br>
                         4435-056
@@ -188,7 +66,7 @@
 
                 <!-- Horário de Funcionamento -->
                 <div class="hours-box">
-                    <h3 style="margin-top: 0; color: #1E392A; margin-bottom: 15px;">Horário de Funcionamento</h3>
+                    <h3 style="margin-top: 0; color: var(--color-forest-green); margin-bottom: 15px;">Horário de Funcionamento</h3>
                     <table class="hours-table">
                         <tr>
                             <td><strong>Segunda-feira</strong></td>
@@ -240,7 +118,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Casa dos Aromas</p>
+        <p>&copy; 2025 Casa dos Aromas | <a href="contactos.html" style="color: var(--color-white); text-decoration: underline;">Contacta-nos</a></p>
     </footer>
 </body>
 </html>
