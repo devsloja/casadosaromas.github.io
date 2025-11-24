@@ -11,18 +11,25 @@
         /* Estilos Específicos para a Grelha de Exposição */
         .product-grid {
             display: grid;
-            /* Mais pequeno para caberem mais fotos em ecrãs grandes, mantendo a responsividade */
+            /* Em ecrãs pequenos/médios, a grelha mantém flexibilidade (2-3 colunas) */
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px; 
             padding: 20px;
             max-width: 1400px;
             margin: 0 auto;
         }
+        
+        /* NOVO: Força 4 colunas em ecrãs com 1024px ou mais */
+        @media (min-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
 
         .product-card {
             background-color: #FFFFFF;
             border: 1px solid #e0e0e0;
-            border-radius: 8px; /* Cantos um pouco mais suaves */
+            border-radius: 8px; 
             overflow: hidden;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -31,21 +38,19 @@
         }
 
         .product-card:hover {
-            transform: scale(1.02); /* Amplia ligeiramente ao passar o rato */
+            transform: scale(1.02); 
             box-shadow: 0 8px 15px rgba(102, 66, 41, 0.2); 
         }
 
         .product-card img {
             width: 100%;
-            /* Altura mantida fixa para uniformidade, pode ser ajustada para 100% */
             height: 250px; 
             display: block;
-            object-fit: cover; /* Garante que a imagem preenche o espaço */
+            object-fit: cover; 
         }
         
-        /* Removemos o .product-details, pois não há texto */
         .product-details {
-            display: none; /* Esconde completamente a área de texto */
+            display: none; 
         }
 
         .no-padding-section {
@@ -60,12 +65,11 @@
         <nav>
             <a href="index.html">Início</a> |
             <a href="sobre.html">Sobre Nós</a> |
-            <a href="produtos.html">Produtos</a> |
+            <a href="produtos.html">Galeria</a> |
             <a href="contactos.html">Contactos</a>
         </nav>
     </header>
 
-    <!-- Usamos uma classe diferente para esta secção para ajustar o padding -->
     <section class="no-padding-section">
         <h2 style="text-align: center; margin-bottom: 30px;">Inspiração para o Lar</h2>
         
@@ -149,16 +153,6 @@
             <!-- PRODUTO 16 -->
             <div class="product-card">
                 <img src="https://lh3.googleusercontent.com/p/AF1QipNLY9F0vE8FCWzHTuyhvKqMF6hK9cSYQfZoAgBa=s680-w680-h510-rw" alt="Jardim com Lareira">
-            </div>
-            
-            <!-- PRODUTO 17 -->
-            <div class="product-card">
-                <img src="https://lh3.googleusercontent.com/p/AF1QipN76rrjt5k_eu6IDS3eDaOPOx_7_nDsA0z6vZTi=s680-w680-h510-rw" alt="Mesa de Madeira com Decoração Natalícia">
-            </div>
-            
-            <!-- PRODUTO 18 -->
-            <div class="product-card">
-                <img src="https://lh3.googleusercontent.com/p/AF1QipMCNWbq4Y28Yy6nXOFbmlGhtUvYphyPNcllZ0su=s680-w680-h510-rw" alt="Pormenor de Tapete/Têxtil">
             </div>
 
         </div>
