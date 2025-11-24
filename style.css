@@ -3,13 +3,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FDF9F4; /* fundo pastel claro */
-    color: #3B3B3B; /* texto escuro suave */
+    background-color: #FFFFFF; /* branco puro */
+    color: #3B3B3B;
 }
 
 /* Header */
 header {
-    background-color: #A7C4A0; /* verde suave tipo folhas */
+    background-color: #4A7C59; /* verde acentuado */
     color: #FFFFFF;
     padding: 20px;
     text-align: center;
@@ -23,24 +23,24 @@ header nav a {
 }
 
 header nav a:hover {
-    color: #FFE5B4; /* tom de madeira ao passar o rato */
+    color: #7B5E3C; /* madeira escura ao passar o rato */
 }
 
 /* Hero / Banner */
 .hero {
     text-align: center;
     padding: 50px 20px;
-    background-color: #FFF5E6; /* tom pastel/areia */
-    border-bottom: 2px solid #CBB28C; /* linha subtil de madeira */
+    background-color: #FDF9F4; /* branco ligeiramente quente */
+    border-bottom: 2px solid #5F4033; /* madeira escura */
 }
 
 .hero h2 {
-    color: #7B9E89; /* verde folhas suave */
+    color: #3E6B49; /* verde acentuado */
     font-size: 2.2em;
 }
 
 .hero p {
-    color: #5F4937; /* tom de madeira */
+    color: #5F4033; /* madeira escura */
     font-size: 1.1em;
     margin: 5px 0;
 }
@@ -53,7 +53,7 @@ section {
 }
 
 section h2 {
-    color: #7B9E89; /* verde suave */
+    color: #3E6B49; /* verde acentuado */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -61,7 +61,7 @@ section h2 {
 section p, section address {
     text-align: center;
     line-height: 1.6;
-    color: #5F4937; /* madeira */
+    color: #5F4033; /* madeira escura */
 }
 
 /* Formulário */
@@ -78,12 +78,12 @@ input, textarea {
     width: 100%;
     padding: 10px;
     margin: 8px 0 15px 0;
-    border: 1px solid #CBB28C;
+    border: 1px solid #7B5E3C; /* madeira escura */
     border-radius: 5px;
 }
 
 button {
-    background-color: #7B9E89; /* verde folhas */
+    background-color: #3E6B49; /* verde acentuado */
     color: #FFFFFF;
     padding: 10px 20px;
     border: none;
@@ -93,12 +93,12 @@ button {
 }
 
 button:hover {
-    background-color: #5F7A6A; /* verde escuro ao passar o rato */
+    background-color: #2F5238; /* verde mais escuro ao passar o rato */
 }
 
 /* Footer */
 footer {
-    background-color: #CBB28C; /* tom madeira claro */
+    background-color: #5F4033; /* madeira escura */
     color: #FFFFFF;
     text-align: center;
     padding: 15px;
