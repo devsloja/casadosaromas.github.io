@@ -60,7 +60,7 @@ a:hover {
 }
 
 /* ----------------------------------------------------------------------- */
-/* 3. HEADER NAVEGAÇÃO (Com Logótipo) */
+/* 3. HEADER NAVEGAÇÃO (Com Logótipo Otimizado) */
 /* ----------------------------------------------------------------------- */
 header {
     background-color: var(--color-forest-green);
@@ -80,7 +80,7 @@ header {
     align-items: center; /* Centraliza horizontalmente */
 }
 
-/* --- NOVO: Estilos do Logótipo --- */
+/* --- ESTILOS DO LOGÓTIPO (ATUALIZADO PARA PNG) --- */
 .logo-link {
     display: block;
     margin-bottom: 15px; /* Espaço entre o logótipo e o menu */
@@ -94,15 +94,19 @@ header {
 
 .logo-img {
     /* Ajuste de tamanho para o cabeçalho */
-    max-width: 200px; 
+    max-width: 180px; 
     height: auto; 
     
-    /* Estética: Como o logótipo é JPG (caixa), arredondamos os cantos */
-    border-radius: 6px; 
+    /* CRÍTICO: Fundo branco para garantir leitura sobre o verde */
+    background-color: var(--color-white);
+    padding: 5px; /* Pequena margem interna */
+    
+    /* Estética: Cantos arredondados */
+    border-radius: 4px; 
     display: block;
     
-    /* Opcional: Borda fina para destacar do fundo verde se o logo for claro */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Opcional: Borda fina */
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* --- Navegação --- */
