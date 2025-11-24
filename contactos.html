@@ -5,42 +5,238 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos - Casa dos Aromas</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CSS Específico para a nova página de Contactos */
+        
+        /* Layout Principal em Grelha */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        @media (min-width: 900px) {
+            .contact-container {
+                grid-template-columns: 1fr 1fr; /* Duas colunas em Desktop */
+                align-items: start;
+            }
+        }
+
+        /* Estilo das Informações (Coluna Esquerda) */
+        .info-column h2 {
+            text-align: left;
+            color: #1E392A;
+            border-bottom: 2px solid #664229;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item strong {
+            color: #1E392A;
+            min-width: 80px;
+        }
+
+        .contact-item a {
+            color: #664229;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #A68B6C;
+            text-decoration: underline;
+        }
+
+        /* Botões de Redes Sociais */
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .btn-social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn-social:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+            color: white;
+        }
+
+        .btn-facebook {
+            background-color: #3b5998; /* Azul Facebook */
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Gradiente Instagram */
+        }
+
+        /* Tabela de Horários */
+        .hours-box {
+            background-color: #f9f7f3;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #1E392A;
+        }
+
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .hours-table td {
+            padding: 8px 0;
+            border-bottom: 1px dashed #dcdcdc;
+            color: #664229;
+        }
+
+        .hours-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .hours-table strong {
+            color: #1E392A;
+        }
+
+        /* Mapa (Coluna Direita) */
+        .map-column {
+            height: 100%;
+            min-height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 450px; /* Altura garantida para o mapa */
+            border: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Casa dos Aromas</h1>
         <nav>
-            <a href="index.html">Início</a>
-            <a href="produtos.html">Produtos</a>
+            <a href="index.html">Início</a> |
+            <a href="sobre.html">Sobre Nós</a> |
+            <a href="produtos.html">Galeria</a> |
             <a href="contactos.html">Contactos</a>
         </nav>
     </header>
 
     <main>
-        <section id="sobre">
-            <h2>Decoração da Casa</h2>
-            <p>Desde 1994 a decorar o seu lar 👇🏻</p>
-            <p>Decoração para casa, Cozinha, WC, Móveis, Têxteis</p>
-            <address>
-                Rua da Restauração 125 A, Rio Tinto, Porto, Portugal<br>
-                4435-056
-            </address>
-        </section>
+        <!-- Container Principal Dividido -->
+        <div class="contact-container">
+            
+            <!-- Coluna 1: Informações, Contactos e Horário -->
+            <div class="info-column">
+                <h2>Canais de Contacto</h2>
+                
+                <div class="contact-item">
+                    <strong>Telefone:</strong> 
+                    <a href="tel:+351229720335">22 972 0335</a>
+                </div>
+                
+                <div class="contact-item">
+                    <strong>Email:</strong> 
+                    <a href="mailto:casaromas@sapo.pt">casaromas@sapo.pt</a>
+                </div>
 
-        <section id="contacto">
-            <h2>Contacta-nos</h2>
-            <p>Email: info@casadosaromas.com</p>
-            <p>Telefone: +351 912 345 678</p>
-            <form action="#" method="post">
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome"><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="4"></textarea><br><br>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+                <div class="contact-item" style="align-items: flex-start;">
+                    <strong>Morada:</strong>
+                    <address style="font-style: normal; color: #664229;">
+                        Rua da Restauração 125 A,<br>
+                        Rio Tinto, Porto, Portugal<br>
+                        4435-056
+                    </address>
+                </div>
+
+                <!-- Redes Sociais -->
+                <div class="social-buttons">
+                    <a href="https://www.facebook.com/casadosaromas" target="_blank" class="btn-social btn-facebook">
+                        Seguir no Facebook
+                    </a>
+                    <a href="https://www.instagram.com/casaromas/" target="_blank" class="btn-social btn-instagram">
+                        Ver Instagram
+                    </a>
+                </div>
+
+                <!-- Horário de Funcionamento -->
+                <div class="hours-box">
+                    <h3 style="margin-top: 0; color: #1E392A; margin-bottom: 15px;">Horário de Funcionamento</h3>
+                    <table class="hours-table">
+                        <tr>
+                            <td><strong>Segunda-feira</strong></td>
+                            <td>09:00–13:00, 14:30–19:00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Terça-feira</strong></td>
+                            <td>09:00–13:00, 14:30–19:00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quarta-feira</strong></td>
+                            <td>09:00–13:00, 14:30–19:00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quinta-feira</strong></td>
+                            <td>09:00–19:00 (Aberto à hora de almoço)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sexta-feira</strong></td>
+                            <td>09:00–13:00, 14:30–19:00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sábado</strong></td>
+                            <td>09:30–13:00, 14:30–18:00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Domingo</strong></td>
+                            <td><span style="color: #d9534f; font-weight: bold;">Encerrado</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Mapa Interativo -->
+            <div class="map-column">
+                <!-- Google Maps Embed: Centrado em Rio Tinto, Rua da Restauração -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.424168019777!2d-8.5777164!3d41.1940156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd246406f17da8e5%3A0x54bfb356660813ef!2sRua%20da%20Restaura%C3%A7%C3%A3o%20125%20A%2C%204435-056%20Rio%20Tinto!5e0!3m2!1spt-PT!2spt!4v1700000000000!5m2!1spt-PT!2spt" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
     </main>
 
     <footer>
