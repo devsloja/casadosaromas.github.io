@@ -75,54 +75,39 @@
             transform: scale(1.05);
         }
 
-        /* 2. Destaques da Marca */
-        .value-blocks {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .value-block {
-            flex-basis: 100%; /* Por defeito, ocupa todo o espaço em mobile */
-            max-width: 300px;
+        /* NOVA SECÇÃO: Sobre Destaque */
+        .about-highlight {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
-            padding: 20px;
-            margin: 15px 10px;
-            border-radius: 10px;
-            border: 1px solid #E0E0E0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            background-color: #F9F9F9;
-        }
-        
-        /* Layout para tablet e desktop */
-        @media (min-width: 768px) {
-            .value-block {
-                flex-basis: calc(33% - 40px);
-            }
         }
 
-        .value-block img.profile-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid #1E392A; /* Borda do logo no Verde Floresta */
+        .about-highlight h2 {
+            color: #1E392A; /* Verde Floresta */
+            margin-bottom: 20px;
+            font-size: 2.5em;
         }
-        
-        .value-block h4 {
-            color: #1E392A;
-            font-size: 1.2em;
-            margin-top: 0;
-            margin-bottom: 10px;
+
+        .about-highlight p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #664229; /* Castanho Carvalho */
+            margin-bottom: 30px;
         }
-        
-        .value-block p {
-            color: #664229;
-            font-size: 0.9em;
-            line-height: 1.4;
+
+        .about-highlight .secondary-cta {
+            background-color: #1E392A; /* Verde Floresta */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .about-highlight .secondary-cta:hover {
+            background-color: #3E6B49; /* Verde ligeiramente mais claro */
         }
         
         /* 3. Pré-visualização de Produtos (Mini-Galeria) */
@@ -224,33 +209,11 @@
         </div>
     </section>
 
-    <!-- 2 & 3. DESTAQUES DA MARCA -->
-    <section>
-        <h2 style="text-align: center; color: #1E392A; margin-bottom: 40px;">Mais de 25 Anos de Experiência</h2>
-        <div class="value-blocks">
-            
-            <!-- Bloco 1: História e Logo -->
-            <div class="value-block">
-                <img src="https://instagram.fopo6-2.fna.fbcdn.net/v/t51.2885-19/434561944_806358088202801_440857520714758469_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby45MTkuYzIifQ&_nc_ht=instagram.fopo6-2.fna.fbcdn.net&_nc_cat=105&_nc_oc=Q6cZ2QFQoRMnpSjpAqssU9YrdqRWaSfNE8cGy7__FE0Z2cWjlbL24xuGuGuV6KGBK8XM7hKRJ5z3J-4I1zKpLOQTzS-qrQ&_nc_ohc=pwO4fIpLplQQ7kNvwEhLcLS&_nc_gid=YxTZ_Ff9mSYYP4CHFBNLSg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfjEplGMN95qcEmUAgJ4PlTTbB0j19kybaHfQr0efZFuFg&oe=692A7B07&_nc_sid=8b3546" alt="Logotipo Casa dos Aromas" class="profile-logo">
-                <h4>Tradição e Confiança</h4>
-                <p>Com mais de duas décadas de história, somos sinónimo de solidez e compromisso inabalável com a qualidade e o design intemporal.</p>
-            </div>
-            
-            <!-- Bloco 2: Produtos/Áreas -->
-            <div class="value-block">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#664229" stroke="#664229" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                <h4>Cobertura Total do Lar</h4>
-                <p>Artigos e mobiliário selecionados para todas as divisões da casa: Salas, Quartos, **Cozinha**, **WC**, **Têxteis** e muito mais.</p>
-            </div>
-            
-            <!-- Bloco 3: Qualidade -->
-            <div class="value-block">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#664229" stroke="#664229" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-                <h4>Inspiração Diária</h4>
-                <p>Curadoria de peças que se integram perfeitamente na sua vida, focadas em robustez e estética para um ambiente harmonioso.</p>
-            </div>
-            
-        </div>
+    <!-- NOVA SECÇÃO: SOBRE NÓS/DESTAQUE (Substitui os 3 blocos) -->
+    <section class="about-highlight">
+        <h2>Tradição e Design em Cada Pormenor</h2>
+        <p>Com uma trajetória consolidada que ultrapassa duas décadas, desde 1994, o nosso compromisso inabalável é transformar o seu lar, elevando o conforto e a estética de cada espaço. Localizados em Rio Tinto, Porto, oferecemos uma curadoria de peças distintas que abrangem móveis, têxteis e artigos para Cozinha e WC. Venha descobrir a excelência no serviço que nos torna a escolha preferida para a decoração.</p>
+        <a href="sobre.html" class="secondary-cta">Ler a História Completa</a>
     </section>
     
     <!-- 4. PRÉ-VISUALIZAÇÃO DE PRODUTOS -->
