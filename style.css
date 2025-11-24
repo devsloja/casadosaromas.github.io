@@ -1,37 +1,106 @@
+/* Reset e base */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F3EDE2;
-    color: #333;
+    background-color: #FDF9F4; /* fundo pastel claro */
+    color: #3B3B3B; /* texto escuro suave */
 }
 
+/* Header */
 header {
-    background-color: #8A9A7A;
-    color: white;
+    background-color: #A7C4A0; /* verde suave tipo folhas */
+    color: #FFFFFF;
     padding: 20px;
     text-align: center;
 }
 
 header nav a {
-    color: white;
+    color: #FFFFFF;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
+header nav a:hover {
+    color: #FFE5B4; /* tom de madeira ao passar o rato */
+}
+
+/* Hero / Banner */
 .hero {
     text-align: center;
     padding: 50px 20px;
+    background-color: #FFF5E6; /* tom pastel/areia */
+    border-bottom: 2px solid #CBB28C; /* linha subtil de madeira */
 }
 
-.destaques {
+.hero h2 {
+    color: #7B9E89; /* verde folhas suave */
+    font-size: 2.2em;
+}
+
+.hero p {
+    color: #5F4937; /* tom de madeira */
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+/* Secções */
+section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section h2 {
+    color: #7B9E89; /* verde suave */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section p, section address {
+    text-align: center;
+    line-height: 1.6;
+    color: #5F4937; /* madeira */
+}
+
+/* Formulário */
+form {
+    max-width: 500px;
+    margin: 20px auto 0 auto;
+    background-color: #FFFFFF;
     padding: 20px;
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-footer {
-    background-color: #5F4937;
-    color: white;
-    text-align: center;
+input, textarea {
+    width: 100%;
     padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #CBB28C;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #7B9E89; /* verde folhas */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #5F7A6A; /* verde escuro ao passar o rato */
+}
+
+/* Footer */
+footer {
+    background-color: #CBB28C; /* tom madeira claro */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
 }
