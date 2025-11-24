@@ -11,18 +11,18 @@
         /* Estilos Específicos para a Grelha de Exposição */
         .product-grid {
             display: grid;
-            /* Em ecrãs pequenos/médios, a grelha mantém flexibilidade (2-3 colunas) */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            /* AUMENTADO: Largura mínima maior para as fotos */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px; 
             padding: 20px;
             max-width: 1400px;
             margin: 0 auto;
         }
         
-        /* NOVO: Força 4 colunas em ecrãs com 1024px ou mais */
+        /* AJUSTADO: Em ecrãs com 1024px ou mais, força 3 colunas (imagens maiores) */
         @media (min-width: 1024px) {
             .product-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -44,7 +44,8 @@
 
         .product-card img {
             width: 100%;
-            height: 250px; 
+            /* AUMENTADO: Altura maior para as imagens */
+            height: 300px; 
             display: block;
             object-fit: cover; 
         }
@@ -115,11 +116,7 @@
                 <img src="https://lh3.googleusercontent.com/p/AF1QipP-mYzRBc6cV47ipdyezaKIM6-sLezZAp04Dxju=s680-w680-h510-rw" alt="Pátio/Terraço com Móveis de Exterior">
             </div>
 
-            <!-- PRODUTO 9 -->
-            <div class="product-card">
-                <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwSpIxoMlU-y6qzi9XACiQnA5-YZC1RpFLq_yzORUcz_607Udgxc_fEgTxoSf-vWI-0zcOb8wfvmU8_A7dsUu397k4wrJRpc63gKFRTmY01Q5sxvr4wZnAzUQO-oQmsOX01zQKkUg=s680-w680-h510-rw" alt="Mesa de Centro de Madeira">
-            </div>
-            
+            <!-- PRODUTO 9 (Removido - Era Mesa de Centro de Madeira) -->
             <!-- PRODUTO 10 -->
             <div class="product-card">
                 <img src="https://lh3.googleusercontent.com/p/AF1QipNSONXQrmG4r-YGF_raMuwLH7f_inH9rhqraeZS=s680-w680-h510-rw" alt="Cozinha com Armários em Madeira Escura">
