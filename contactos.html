@@ -4,21 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos - Casa dos Aromas</title>
-    <!-- O ficheiro style.css global trata de todo o design agora -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <!-- HEADER: Logótipo e Navegação (Uniformizado) -->
     <header>
-        <!-- Logótipo como Imagem e Link para a Home -->
-        <a href="index.html" class="logo-link" title="Ir para a Página Inicial">
-            <img src="imagens/Gemini_Generated_Image_ctfu3hctfu3hctfu.jpg" 
-                 alt="Logótipo Casa dos Aromas - Decoração e Design" 
-                 class="logo-img">
+        <a href="index.html" class="logo-link">
+            <!-- APONTA PARA logo.png -->
+            <img src="logo.png" alt="Logótipo Casa dos Aromas" class="logo-img">
         </a>
-
-        <!-- Menu de Navegação -->
         <nav>
             <a href="index.html">Início</a>
             <a href="sobre.html">Sobre Nós</a>
@@ -28,92 +22,33 @@
     </header>
 
     <main>
-        <!-- Container Principal Dividido -->
         <div class="contact-container">
-            
-            <!-- Coluna 1: Informações, Contactos e Horário -->
             <div class="info-column">
                 <h2>Canais de Contacto</h2>
-                
-                <div class="contact-item">
-                    <strong>Telefone:</strong> 
-                    <a href="tel:+351229720335">22 972 0335</a>
-                </div>
-                
-                <div class="contact-item">
-                    <strong>Email:</strong> 
-                    <a href="mailto:casaromas@sapo.pt">casaromas@sapo.pt</a>
-                </div>
-
+                <div class="contact-item"><strong>Telefone:</strong> <a href="tel:+351229720335">22 972 0335</a></div>
+                <div class="contact-item"><strong>Email:</strong> <a href="mailto:casaromas@sapo.pt">casaromas@sapo.pt</a></div>
                 <div class="contact-item" style="align-items: flex-start;">
                     <strong>Morada:</strong>
                     <address style="font-style: normal; color: var(--color-oak-brown);">
-                        Rua da Restauração 125 A,<br>
-                        Rio Tinto, Porto, Portugal<br>
-                        4435-056
+                        Rua da Restauração 125 A,<br>Rio Tinto, Porto, Portugal<br>4435-056
                     </address>
                 </div>
-
-                <!-- Redes Sociais -->
                 <div class="social-buttons">
-                    <a href="https://www.facebook.com/casadosaromas" target="_blank" class="btn-social btn-facebook">
-                        Seguir no Facebook
-                    </a>
-                    <a href="https://www.instagram.com/casaromas/" target="_blank" class="btn-social btn-instagram">
-                        Ver Instagram
-                    </a>
+                    <a href="https://www.facebook.com/casadosaromas" target="_blank" class="btn-social btn-facebook">Facebook</a>
+                    <a href="https://www.instagram.com/casaromas/" target="_blank" class="btn-social btn-instagram">Instagram</a>
                 </div>
-
-                <!-- Horário de Funcionamento -->
                 <div class="hours-box">
-                    <h3 style="margin-top: 0; color: var(--color-forest-green); margin-bottom: 15px;">Horário de Funcionamento</h3>
+                    <h3 style="margin-top: 0; color: var(--color-forest-green); margin-bottom: 15px;">Horário</h3>
                     <table class="hours-table">
-                        <tr>
-                            <td><strong>Segunda-feira</strong></td>
-                            <td>09:00–13:00, 14:30–19:00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Terça-feira</strong></td>
-                            <td>09:00–13:00, 14:30–19:00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Quarta-feira</strong></td>
-                            <td>09:00–13:00, 14:30–19:00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Quinta-feira</strong></td>
-                            <td>09:00–19:00 (Aberto à hora de almoço)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sexta-feira</strong></td>
-                            <td>09:00–13:00, 14:30–19:00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sábado</strong></td>
-                            <td>09:30–13:00, 14:30–18:00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Domingo</strong></td>
-                            <td><span style="color: #d9534f; font-weight: bold;">Encerrado</span></td>
-                        </tr>
+                        <tr><td><strong>Segunda a Sexta</strong></td><td>09:00–13:00, 14:30–19:00</td></tr>
+                        <tr><td><strong>Sábado</strong></td><td>09:30–13:00, 14:30–18:00</td></tr>
+                        <tr><td><strong>Domingo</strong></td><td><span style="color: #d9534f; font-weight: bold;">Encerrado</span></td></tr>
                     </table>
                 </div>
             </div>
-
-            <!-- Coluna 2: Mapa Interativo -->
             <div class="map-column">
-                <!-- Google Maps Embed: Centrado em Rio Tinto, Rua da Restauração -->
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.424168019777!2d-8.5777164!3d41.1940156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd246406f17da8e5%3A0x54bfb356660813ef!2sRua%20da%20Restaura%C3%A7%C3%A3o%20125%20A%2C%204435-056%20Rio%20Tinto!5e0!3m2!1spt-PT!2spt!4v1700000000000!5m2!1spt-PT!2spt" 
-                    width="600" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.424168019777!2d-8.5777164!3d41.1940156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd246406f17da8e5%3A0x54bfb356660813ef!2sRua%20da%20Restaura%C3%A7%C3%A3o%20125%20A%2C%204435-056%20Rio%20Tinto!5e0!3m2!1spt-PT!2spt!4v1700000000000!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-
         </div>
     </main>
 
