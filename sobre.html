@@ -4,33 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nós - Casa dos Aromas</title>
-    <!-- Assumindo que o ficheiro style.css está na mesma pasta -->
     <link rel="stylesheet" href="style.css"> 
+
+    <style>
+        /* CSS Específico para a página Sobre Nós */
+        .intro-banner {
+            padding: 30px 20px;
+            background-color: #f7f7f7; /* Um cinza muito suave */
+            text-align: center;
+            border-bottom: 3px solid #664229; /* Castanho Carvalho */
+        }
+
+        .intro-banner img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Imagem redonda */
+            object-fit: cover;
+            border: 5px solid #1E392A; /* Borda Verde Floresta */
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            justify-content: space-between;
+        }
+
+        .main-text {
+            flex: 1 1 65%; /* Ocupa 65% em desktop */
+            min-width: 300px; /* Largura mínima para mobile */
+            padding-right: 20px;
+        }
+
+        .side-info {
+            flex: 1 1 30%; /* Ocupa 30% em desktop */
+            min-width: 250px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #F9F9F9;
+            border-radius: 8px;
+            border-left: 5px solid #1E392A; /* Detalhe em verde */
+            height: fit-content;
+        }
+
+        .side-info h3 {
+            color: #664229; /* Castanho Carvalho */
+            margin-top: 0;
+            border-bottom: 1px dashed #E0E0E0;
+            padding-bottom: 10px;
+        }
+
+        .side-info p {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .side-info a {
+            color: #1E392A;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .main-text {
+                padding-right: 0;
+            }
+            .side-info {
+                margin-top: 40px;
+                order: 3; /* Move a informação lateral para baixo em mobile */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Casa dos Aromas</h1>
         <nav>
-            <!-- Nota: Usei href="#" para as páginas que não foram criadas, mas tu deves ligar aos ficheiros reais (ex: index.html) -->
-            <a href="#">Início</a> |
+            <a href="index.html">Início</a> |
             <a href="sobre.html">Sobre Nós</a> |
-            <a href="#">Produtos</a> |
-            <a href="#">Contactos</a>
+            <a href="produtos.html">Galeria</a> |
+            <a href="contactos.html">Contactos</a>
         </nav>
     </header>
 
-    <section>
+    <!-- NOVO: Banner/Destaque Visual com Imagem de Perfil -->
+    <section class="intro-banner">
+        <!-- Imagem de Perfil (Usada como Logotipo Secundário) -->
+        <img src="https://instagram.fopo6-2.fna.fbcdn.net/v/t51.2885-19/434561944_806358088202801_440857520714758469_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby45MTkuYzIifQ&_nc_ht=instagram.fopo6-2.fna.fbcdn.net&_nc_cat=105&_nc_oc=Q6cZ2QFQoRMnpSjpAqssU9YrdqRWaSfNE8cGy7__FE0Z2cWjlbL24xuGuV6KGBK8XM7hKRJ5z3J-4I1zKpLOQTzS-qrQ&_nc_ohc=pwO4fIpLplQQ7kNvwEhLcLS&_nc_gid=YxTZ_Ff9mSYYP4CHFBNLSg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfjEplGMN95qcEmUAgJ4PlTTbB0j19kybaHfQr0efZFuFg&oe=692A7B07&_nc_sid=8b3546" alt="Foto de Perfil da Casa dos Aromas">
         <h2>A Nossa História e Compromisso</h2>
-        
-        <!-- PRIMEIRO PARÁGRAFO -->
-        <p>Desde 1994 que a nossa empresa se dedica integralmente à arte de transformar lares, elevando o conforto e a estética de cada espaço habitacional. Com uma trajetória consolidada que ultrapassa duas décadas, a longevidade no mercado reflete o nosso compromisso inabalável com a qualidade e a satisfação do cliente. Acreditamos que a casa é o epicentro da vida pessoal e, por isso, procuramos fornecer soluções de Decoração da Casa que combinem funcionalidade com as últimas tendências de design.</p>
-        
-        <!-- SEGUNDO PARÁGRAFO -->
-        <p>Localizada no coração da cidade, no endereço Rua da Restauração 125 A, em Rio Tinto, Porto (Portugal, Código Postal 4435-056), a nossa loja tornou-se um ponto de referência para quem procura um portefólio abrangente de artigos. A nossa oferta estende-se a todas as divisões da casa, abrangendo as áreas de Cozinha e WC, onde a utilidade se encontra com o requinte. Para além dos pequenos pormenores decorativos, destacamos a seleção de Móveis robustos e com design intemporal, bem como uma vasta gama de Têxteis que conferem calor e personalidade aos ambientes. A excelência no serviço e o foco na curadoria de peças distintas são os pilares que sustentam a nossa missão desde o primeiro dia, permitindo-nos continuar a ser a escolha preferida para a decoração do seu lar.</p>
+        <p style="font-size: 1.2em; color: #1E392A; font-weight: bold;">Desde 1994 a moldar lares em Rio Tinto, Porto.</p>
     </section>
+    
+    <div class="content-container">
+        
+        <!-- SECÇÃO PRINCIPAL DO TEXTO -->
+        <section class="main-text">
+            
+            <!-- PRIMEIRO PARÁGRAFO -->
+            <p>Desde 1994 que a nossa empresa se dedica integralmente à arte de transformar lares, elevando o conforto e a estética de cada espaço habitacional. Com uma trajetória consolidada que ultrapassa duas décadas, a longevidade no mercado reflete o nosso compromisso inabalável com a qualidade e a satisfação do cliente. Acreditamos que a casa é o epicentro da vida pessoal e, por isso, procuramos fornecer soluções de Decoração da Casa que combinem funcionalidade com as últimas tendências de design.</p>
+            
+            <!-- SEGUNDO PARÁGRAFO - Expandido com mais detalhe -->
+            <p>Localizada no coração da cidade, no endereço Rua da Restauração 125 A, em Rio Tinto, Porto (Portugal, Código Postal 4435-056), a nossa loja tornou-se um ponto de referência para quem procura um portefólio abrangente de artigos. A nossa oferta estende-se a todas as divisões da casa, abrangendo as áreas de Cozinha e WC, onde a utilidade se encontra com o requinte. Para além dos pequenos pormenores decorativos, destacamos a seleção de Móveis robustos e com design intemporal, bem como uma vasta gama de Têxteis que conferem calor e personalidade aos ambientes. A excelência no serviço e o foco na curadoria de peças distintas são os pilares que sustentam a nossa missão desde o primeiro dia, permitindo-nos continuar a ser a escolha preferida para a decoração do seu lar.</p>
+
+            <p style="margin-top: 30px; font-style: italic;">Se procura inspiração ou um artigo específico, convidamo-lo a visitar a nossa <a href="produtos.html" style="color: #664229; font-weight: bold;">Galeria de Produtos</a> ou a entrar em contacto connosco.</p>
+        </section>
+
+        <!-- NOVO: BLOC DE INFORMAÇÃO LATERAL -->
+        <aside class="side-info">
+            <h3>Detalhes Essenciais</h3>
+            <p><strong>Fundação:</strong> 1994</p>
+            <p><strong>Especialidade:</strong> Decoração para Casa, Cozinha, WC, Móveis e Têxteis.</p>
+            
+            <h3>Onde nos Encontrar</h3>
+            <p><strong>Localização:</strong></p>
+            <address style="line-height: 1.5; color: #664229; text-align: left;">
+                Rua da Restauração 125 A<br>
+                Rio Tinto, Porto<br>
+                4435-056 Portugal
+            </address>
+            <p style="margin-top: 15px;"><a href="https://www.google.com/maps/place/Casa+dos+Aromas/@41.1940156,-8.5777164,16z/data=!4m6!3m5!1s0xd246406f17da8e5:0x54bfb356660813ef!8m2!3d41.1948284!4d-8.5759354!16s%2Fg%2F1hc2w4qt5?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver no Google Maps</a></p>
+            
+            <h3>Horário (Fictício)</h3>
+            <p>
+                Segunda a Sexta: 10h00 – 19h00<br>
+                Sábado: 10h00 – 13h00<br>
+                Domingo e Feriados: Encerrado
+            </p>
+        </aside>
+    </div>
 
     <footer>
-        <p>&copy; 2025 Casa dos Aromas | <a href="#">Contacta-nos</a></p>
+        <p>&copy; 2025 Casa dos Aromas | <a href="contactos.html">Contacta-nos</a></p>
     </footer>
 </body>
 </html>
