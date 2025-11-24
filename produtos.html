@@ -3,28 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos - Casa dos Aromas</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Galeria de Imagens - Casa dos Aromas</title>
+    <!-- Liga à folha de estilos principal (com os teus tons de verde e castanho) -->
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* Estilos Específicos para a Grelha de Exposição */
+        .product-grid {
+            display: grid;
+            /* Mais pequeno para caberem mais fotos em ecrãs grandes, mantendo a responsividade */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; 
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: #FFFFFF;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px; /* Cantos um pouco mais suaves */
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: auto;
+        }
+
+        .product-card:hover {
+            transform: scale(1.02); /* Amplia ligeiramente ao passar o rato */
+            box-shadow: 0 8px 15px rgba(102, 66, 41, 0.2); 
+        }
+
+        .product-card img {
+            width: 100%;
+            /* Altura mantida fixa para uniformidade, pode ser ajustada para 100% */
+            height: 250px; 
+            display: block;
+            object-fit: cover; /* Garante que a imagem preenche o espaço */
+        }
+        
+        /* Removemos o .product-details, pois não há texto */
+        .product-details {
+            display: none; /* Esconde completamente a área de texto */
+        }
+
+        .no-padding-section {
+            padding: 20px 0 40px 0;
+        }
+
+    </style>
 </head>
 <body>
     <header>
         <h1>Casa dos Aromas</h1>
         <nav>
-            <a href="index.html">Início</a>
-            <a href="produtos.html">Produtos</a>
+            <a href="index.html">Início</a> |
+            <a href="sobre.html">Sobre Nós</a> |
+            <a href="produtos.html">Produtos</a> |
             <a href="contactos.html">Contactos</a>
         </nav>
     </header>
 
-    <main>
-        <h2>Os Nossos Produtos</h2>
-        <ul>
-            <li>Velas Aromáticas</li>
-            <li>Óleos Essenciais</li>
-            <li>Difusores</li>
-            <li>Sabonetes Artesanais</li>
-        </ul>
-    </main>
+    <!-- Usamos uma classe diferente para esta secção para ajustar o padding -->
+    <section class="no-padding-section">
+        <h2 style="text-align: center; margin-bottom: 30px;">Inspiração para o Lar</h2>
+        
+        <div class="product-grid">
+            
+            <!-- PRODUTO 1 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipOGc1FiROLw13O4FSmgjZKzHOJBD4qvZ-0febVC=s680-w680-h510-rw" alt="Decoração Vintage">
+            </div>
+
+            <!-- PRODUTO 2 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipP_a6iuUKHCZdkE1tcOlE1jQKb29jj0lB45kUXT=s680-w680-h510-rw" alt="Móvel de Madeira para Sala">
+            </div>
+
+            <!-- PRODUTO 3 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPXOf-u1yDdUq4N5YUyL24hF1Xmw1Vs2lF4-1zd=s680-w680-h510-rw" alt="Cozinha com Bancada de Madeira">
+            </div>
+
+            <!-- PRODUTO 4 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipOZJhd01afPe43yW3CxRn_D1-2ImvlGbuLTOvcU=s680-w680-h510-rw" alt="Decoração de Parede em Madeira">
+            </div>
+
+            <!-- PRODUTO 5 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNpuRN8qoy4ChTm1TAq7Da3HhLOYHphVD3ZAAYs=s680-w680-h510-rw" alt="Mesa e Cadeira de Exterior">
+            </div>
+
+            <!-- PRODUTO 6 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNs8iYRqv2d2hQVmdkpc775A-agdUFrnEbINwQm=s680-w680-h510-rw" alt="Espelho de Parede com Moldura Dourada">
+            </div>
+            
+            <!-- PRODUTO 7 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNCVxlXd-Yxc06G7bJ-TipPkgwPBAkjUl0Lhvn_=s680-w680-h510-rw" alt="Armário/Estante de Madeira">
+            </div>
+            
+            <!-- PRODUTO 8 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipP-mYzRBc6cV47ipdyezaKIM6-sLezZAp04Dxju=s680-w680-h510-rw" alt="Pátio/Terraço com Móveis de Exterior">
+            </div>
+
+            <!-- PRODUTO 9 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwSpIxoMlU-y6qzi9XACiQnA5-YZC1RpFLq_yzORUcz_607Udgxc_fEgTxoSf-vWI-0zcOb8wfvmU8_A7dsUu397k4wrJRpc63gKFRTmY01Q5sxvr4wZnAzUQO-oQmsOX01zQKkUg=s680-w680-h510-rw" alt="Mesa de Centro de Madeira">
+            </div>
+            
+            <!-- PRODUTO 10 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNSONXQrmG4r-YGF_raMuwLH7f_inH9rhqraeZS=s680-w680-h510-rw" alt="Cozinha com Armários em Madeira Escura">
+            </div>
+
+            <!-- PRODUTO 11 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPYz86eAgmdt-ubm_0LuKISfN2YY1v-aSK0kVcw=s680-w680-h510-rw" alt="Quarto com Decoração Minimalista">
+            </div>
+            
+            <!-- PRODUTO 12 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPgQqm9NsMhgIq6DdZNA5edSDAw-CpOPBz6yVHS=s680-w680-h510-rw" alt="Sala de Jantar em tons neutros">
+            </div>
+
+            <!-- PRODUTO 13 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipO72fRYdhJenAliRbGxWHJ2QlK8EaBMgwB8m-PA=s680-w680-h510-rw" alt="Sala de Estar Acolhedora">
+            </div>
+
+            <!-- PRODUTO 14 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNIhMXmnyxqGMnVQjlIA0GaY6cxTk9J-PmxvJOm=s680-w680-h510-rw" alt="WC com Espelho Redondo">
+            </div>
+            
+            <!-- PRODUTO 15 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNNf4Iss_yAx3afOcoPNHpx9XRNGS3NXC6AG-oZ=s680-w680-h510-rw" alt="Decoração de Inverno">
+            </div>
+
+            <!-- PRODUTO 16 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNLY9F0vE8FCWzHTuyhvKqMF6hK9cSYQfZoAgBa=s680-w680-h510-rw" alt="Jardim com Lareira">
+            </div>
+            
+            <!-- PRODUTO 17 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipN76rrjt5k_eu6IDS3eDaOPOx_7_nDsA0z6vZTi=s680-w680-h510-rw" alt="Mesa de Madeira com Decoração Natalícia">
+            </div>
+            
+            <!-- PRODUTO 18 -->
+            <div class="product-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipMCNWbq4Y28Yy6nXOFbmlGhtUvYphyPNcllZ0su=s680-w680-h510-rw" alt="Pormenor de Tapete/Têxtil">
+            </div>
+
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2025 Casa dos Aromas</p>
