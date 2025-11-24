@@ -3,13 +3,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF; /* Branco puro conforme solicitado */
-    color: #3E2723; /* Texto base agora em castanho muito escuro */
+    background-color: #FFFFFF; /* Branco puro */
+    color: #664229; /* NOVO: Castanho Carvalho (madeira natural) */
 }
 
 /* Header */
 header {
-    background-color: #1E392A; /* Verde Floresta Profundo */
+    background-color: #1E392A; /* Verde Floresta Profundo (mantido) */
     color: #FFFFFF;
     padding: 20px;
     text-align: center;
@@ -20,19 +20,19 @@ header nav a {
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
-    transition: color 0.3s ease; /* Suaviza a transição de cor */
+    transition: color 0.3s ease;
 }
 
 header nav a:hover {
-    color: #A68B6C; /* Um tom de madeira mais claro para contraste no hover */
+    color: #C4A484; /* NOVO: Tom "Carvalho Claro" ao passar o rato */
 }
 
 /* Hero / Banner */
 .hero {
     text-align: center;
     padding: 50px 20px;
-    background-color: #FFFFFF; /* Fundo branco puro */
-    border-bottom: 2px solid #3E2723; /* Castanho Expresso */
+    background-color: #FFFFFF;
+    border-bottom: 3px solid #664229; /* NOVO: Borda em Castanho Carvalho */
 }
 
 .hero h2 {
@@ -41,7 +41,7 @@ header nav a:hover {
 }
 
 .hero p {
-    color: #3E2723; /* Castanho Expresso */
+    color: #664229; /* NOVO: Castanho Carvalho */
     font-size: 1.1em;
     margin: 5px 0;
 }
@@ -62,7 +62,7 @@ section h2 {
 section p, section address {
     text-align: center;
     line-height: 1.6;
-    color: #3E2723; /* Castanho Expresso */
+    color: #664229; /* NOVO: Texto em Castanho Carvalho */
 }
 
 /* Formulário */
@@ -72,18 +72,17 @@ form {
     background-color: #FFFFFF;
     padding: 20px;
     border-radius: 10px;
-    /* Sombra ligeiramente ajustada para combinar com os tons escuros */
-    box-shadow: 0 0 15px rgba(62, 39, 35, 0.15); 
-    border: 1px solid #E0E0E0; /* Borda subtil para delimitar no fundo branco */
+    box-shadow: 0 0 15px rgba(102, 66, 41, 0.15); /* Sombra ajustada ao tom castanho novo */
+    border: 1px solid #E0E0E0;
 }
 
 input, textarea {
     width: 100%;
     padding: 10px;
     margin: 8px 0 15px 0;
-    border: 1px solid #3E2723; /* Castanho Expresso */
+    border: 1px solid #664229; /* NOVO: Borda dos inputs em Castanho Carvalho */
     border-radius: 5px;
-    box-sizing: border-box; /* Garante que o padding não aumenta a largura total */
+    box-sizing: border-box;
 }
 
 button {
@@ -98,12 +97,12 @@ button {
 }
 
 button:hover {
-    background-color: #14261C; /* Verde quase preto ao passar o rato */
+    background-color: #14261C; /* Verde mais escuro no hover */
 }
 
 /* Footer */
 footer {
-    background-color: #3E2723; /* Castanho Expresso */
+    background-color: #664229; /* NOVO: Fundo do rodapé em Castanho Carvalho */
     color: #FFFFFF;
     text-align: center;
     padding: 15px;
