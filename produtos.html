@@ -6,73 +6,29 @@
     <title>Galeria de Imagens - Casa dos Aromas</title>
     <!-- Liga à folha de estilos principal (com os teus tons de verde e castanho) -->
     <link rel="stylesheet" href="style.css"> 
-    
-    <style>
-        /* Estilos Específicos para a Grelha de Exposição */
-        .product-grid {
-            display: grid;
-            /* AUMENTADO: Largura mínima maior para as fotos */
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px; 
-            padding: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        /* AJUSTADO: Em ecrãs com 1024px ou mais, força 3 colunas (imagens maiores) */
-        @media (min-width: 1024px) {
-            .product-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .product-card {
-            background-color: #FFFFFF;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px; 
-            overflow: hidden;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: auto;
-        }
-
-        .product-card:hover {
-            transform: scale(1.02); 
-            box-shadow: 0 8px 15px rgba(102, 66, 41, 0.2); 
-        }
-
-        .product-card img {
-            width: 100%;
-            /* AUMENTADO: Altura maior para as imagens */
-            height: 300px; 
-            display: block;
-            object-fit: cover; 
-        }
-        
-        .product-details {
-            display: none; 
-        }
-
-        .no-padding-section {
-            padding: 20px 0 40px 0;
-        }
-
-    </style>
 </head>
 <body>
+    
+    <!-- HEADER: Logótipo e Navegação (Uniformizado) -->
     <header>
-        <h1>Casa dos Aromas</h1>
+        <!-- Logótipo como Imagem e Link para a Home -->
+        <a href="index.html" class="logo-link" title="Ir para a Página Inicial">
+            <img src="imagens/Gemini_Generated_Image_ctfu3hctfu3hctfu.jpg" 
+                 alt="Logótipo Casa dos Aromas - Decoração e Design" 
+                 class="logo-img">
+        </a>
+
+        <!-- Menu de Navegação -->
         <nav>
-            <a href="index.html">Início</a> |
-            <a href="sobre.html">Sobre Nós</a> |
-            <a href="produtos.html">Galeria</a> |
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="produtos.html">Galeria</a>
             <a href="contactos.html">Contactos</a>
         </nav>
     </header>
 
     <section class="no-padding-section">
-        <h2 style="text-align: center; margin-bottom: 30px;">Inspiração para o Lar</h2>
+        <h2 style="text-align: center; margin-bottom: 30px; color: var(--color-forest-green);">Inspiração para o Lar</h2>
         
         <div class="product-grid">
             
@@ -116,7 +72,6 @@
                 <img src="https://lh3.googleusercontent.com/p/AF1QipP-mYzRBc6cV47ipdyezaKIM6-sLezZAp04Dxju=s680-w680-h510-rw" alt="Pátio/Terraço com Móveis de Exterior">
             </div>
 
-            <!-- PRODUTO 9 (Removido - Era Mesa de Centro de Madeira) -->
             <!-- PRODUTO 10 -->
             <div class="product-card">
                 <img src="https://lh3.googleusercontent.com/p/AF1QipNSONXQrmG4r-YGF_raMuwLH7f_inH9rhqraeZS=s680-w680-h510-rw" alt="Cozinha com Armários em Madeira Escura">
@@ -156,7 +111,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Casa dos Aromas</p>
+        <p>&copy; 2025 Casa dos Aromas | <a href="contactos.html" style="color: var(--color-white); text-decoration: underline;">Contacta-nos</a></p>
     </footer>
 </body>
 </html>
