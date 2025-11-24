@@ -58,12 +58,12 @@ a:hover {
 }
 
 /* ----------------------------------------------------------------------- */
-/* 3. HEADER NAVEGAÇÃO (ALTERADO: Logo à Esquerda) */
+/* 3. HEADER NAVEGAÇÃO (ALTERADO: Logo Esq, Menu Centro) */
 /* ----------------------------------------------------------------------- */
 header {
     background-color: var(--color-forest-green);
     color: var(--color-white);
-    padding: 15px 40px; /* Aumentei o padding lateral para afastar das bordas */
+    padding: 15px 40px; 
     
     /* Configuração Sticky - Fixa o menu no topo */
     position: sticky;
@@ -71,19 +71,25 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     
-    /* LAYOUT HORIZONTAL (Desktop) */
-    display: flex;
-    flex-direction: row; /* Coloca lado a lado */
-    justify-content: space-between; /* Logo na ponta esquerda, Menu na ponta direita */
-    align-items: center; /* Alinha verticalmente ao centro */
+    /* LAYOUT EM GRID (Desktop) - Para centramento perfeito */
+    /* Cria 3 colunas: 
+       1. Espaço esquerdo (1fr) 
+       2. Conteúdo central ajustado ao tamanho (auto) 
+       3. Espaço direito (1fr) 
+       Isto garante que o elemento do meio fica exatamente no centro da página */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center; 
 }
 
 /* --- ESTILOS DO LOGÓTIPO --- */
 .logo-link {
+    grid-column: 1; /* Força o logo para a primeira coluna (Esquerda) */
+    justify-self: start; /* Alinha o logo à esquerda dentro da sua coluna */
+    
     display: block;
     line-height: 0;
     transition: transform 0.3s ease;
-    /* Removemos a margem inferior pois agora estão lado a lado */
     margin-bottom: 0; 
 }
 
@@ -92,7 +98,7 @@ header {
 }
 
 .logo-img {
-    max-width: 150px; /* Ligeiramente menor para caber bem na barra */
+    max-width: 150px; 
     height: auto; 
     
     /* Fundo branco para garantir leitura */
@@ -105,9 +111,11 @@ header {
 
 /* --- Navegação --- */
 header nav {
+    grid-column: 2; /* Força o menu para a coluna do meio (Centro) */
+    justify-self: center; /* Garante que o menu fica centrado */
+    
     display: flex;
     gap: 30px;
-    justify-content: flex-end; /* Alinha os itens do menu à direita */
     flex-wrap: wrap;
 }
 
@@ -142,12 +150,19 @@ header nav a:hover::after {
 }
 
 /* --- RESPONSIVIDADE DO HEADER (Mobile) --- */
-/* Quando o ecrã for menor que 768px (tablets/telemóveis), volta a empilhar */
-@media (max-width: 768px) {
+/* Quando o ecrã for menor que 900px, muda para Flexbox vertical para não encavalitar */
+@media (max-width: 900px) {
     header {
-        flex-direction: column; /* Volta a empilhar verticalmente */
+        display: flex; /* Override do Grid para Flex no mobile */
+        flex-direction: column; /* Empilha verticalmente */
+        align-items: center;
         padding: 15px 20px;
         gap: 15px;
+    }
+    
+    .logo-link {
+        /* No mobile, removemos as propriedades de grid */
+        justify-self: auto;
     }
     
     header nav {
