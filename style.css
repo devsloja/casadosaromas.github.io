@@ -1,110 +1,466 @@
-/* Reset e base */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #FFFFFF; /* Branco puro */
-    color: #664229; /* NOVO: Castanho Carvalho (madeira natural) */
+/* ----------------------------------------------------------------------- */
+/* 1. IMPORTAÇÃO DE FONTES E VARIÁVEIS (BRAND IDENTITY) */
+/* ----------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;700&display=swap');
+
+:root {
+    /* Paleta de Cores "Hygge" & Natureza */
+    --color-forest-green: #1E392A;    /* Identidade Principal: Profundo, Nobre */
+    --color-oak-brown: #664229;       /* Texto e Acentos: Quente, Madeira */
+    --color-soft-cream: #F9F7F3;      /* Fundo Global: Acolhedor (substitui o branco) */
+    --color-white: #FFFFFF;           /* Cartões e Destaques */
+    --color-gold-accent: #A68B6C;     /* Hover e Detalhes Premium */
+    --color-light-gray: #EAEAEA;      /* Bordas subtis */
+    
+    /* Espaçamentos e Sombras */
+    --shadow-soft: 0 4px 20px rgba(30, 57, 42, 0.08);
+    --shadow-hover: 0 8px 30px rgba(102, 66, 41, 0.15);
+    --border-radius: 8px;
 }
 
-/* Header */
+/* ----------------------------------------------------------------------- */
+/* 2. RESET E TIPOGRAFIA BASE (User Interface) */
+/* ----------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Fonte moderna para leitura fácil */
+    background-color: var(--color-soft-cream);
+    color: var(--color-oak-brown);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased; /* Renderização de texto mais nítida */
+}
+
+/* Tipografia Editorial para Títulos */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif; /* Toque de elegância clássica */
+    color: var(--color-forest-green);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.5rem; }
+
+/* Links Globais */
+a {
+    color: var(--color-forest-green);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-gold-accent);
+}
+
+/* ----------------------------------------------------------------------- */
+/* 3. HEADER NAVEGAÇÃO (Sticky / Fixo) */
+/* ----------------------------------------------------------------------- */
 header {
-    background-color: #1E392A; /* Verde Floresta Profundo (mantido) */
-    color: #FFFFFF;
-    padding: 20px;
-    text-align: center;
+    background-color: var(--color-forest-green);
+    color: var(--color-white);
+    padding: 15px 40px;
+    
+    /* Configuração Sticky - Fixa o menu no topo */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--color-white);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
 }
 
 header nav a {
-    color: #FFFFFF;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 5px 0;
+    position: relative;
+}
+
+/* Efeito de Sublinhado Animado no Menu */
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-gold-accent);
+    transition: width 0.3s ease;
 }
 
 header nav a:hover {
-    color: #C4A484; /* NOVO: Tom "Carvalho Claro" ao passar o rato */
+    color: var(--color-gold-accent);
 }
 
-/* Hero / Banner */
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #FFFFFF;
-    border-bottom: 3px solid #664229; /* NOVO: Borda em Castanho Carvalho */
+header nav a:hover::after {
+    width: 100%;
 }
 
-.hero h2 {
-    color: #1E392A; /* Verde Floresta Profundo */
-    font-size: 2.2em;
-}
-
-.hero p {
-    color: #664229; /* NOVO: Castanho Carvalho */
-    font-size: 1.1em;
-    margin: 5px 0;
-}
-
-/* Secções */
+/* ----------------------------------------------------------------------- */
+/* 4. COMPONENTES GLOBAIS (Botões e Secções) */
+/* ----------------------------------------------------------------------- */
 section {
-    padding: 40px 20px;
-    max-width: 900px;
+    padding: 60px 20px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-section h2 {
-    color: #1E392A; /* Verde Floresta Profundo */
+/* Botão Principal (Call To Action) */
+.cta-button {
+    background-color: var(--color-oak-brown);
+    color: var(--color-white);
+    padding: 14px 32px;
+    border-radius: 4px; /* Ligeiramente mais quadrado para ar moderno */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: inline-block;
+    border: 1px solid var(--color-oak-brown);
+    
+    /* Micro-interação */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--color-gold-accent);
+    border-color: var(--color-gold-accent);
+    transform: translateY(-2px); /* Eleva o botão */
+    box-shadow: 0 4px 12px rgba(166, 139, 108, 0.4);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+/* Botão Secundário */
+.secondary-cta {
+    background-color: transparent;
+    color: var(--color-forest-green);
+    border: 2px solid var(--color-forest-green);
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.secondary-cta:hover {
+    background-color: var(--color-forest-green);
+    color: var(--color-white);
+}
+
+/* ----------------------------------------------------------------------- */
+/* 5. HOMEPAGE (index.html) - Estilos Consolidados */
+/* ----------------------------------------------------------------------- */
+.hero-banner {
+    width: 100%;
+    min-height: 85vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1px; /* Corrige pequena linha branca */
+    /* Imagem Hero */
+    background-image: url('https://scontent.fopo6-2.fna.fbcdn.net/v/t39.30808-6/482218833_1259760882398882_6742136871312125712_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=7qa5WjBjRjkQ7kNvwHkLMug&_nc_oc=Adm_cJmHpboLtlvYQETY_34-lr_7fCO9pyJCnoBcJ3no1UfGdrQMrGK8T3H9jAXW2rb7ZEPW_CkvL17pLUWHYtOO&_nc_zt=23&_nc_ht=scontent.fopo6-2.fna&_nc_gid=SgYF7JgWvF4MtXdHZ_5XEA&oh=00_Afip3xurQckLXlEcOnj4DayTBbI2nGvRrDw2DF_Crho5Tw&oe=692A78D5');
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(30, 57, 42, 0.3), rgba(30, 57, 42, 0.5)); /* Gradiente subtil */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
     text-align: center;
+    color: var(--color-white);
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h2 {
+    color: var(--color-white);
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Responsivo */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     margin-bottom: 20px;
 }
 
-section p, section address {
+.hero-content p {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    margin-bottom: 40px;
+}
+
+/* Destaque Sobre */
+.about-highlight {
     text-align: center;
-    line-height: 1.6;
-    color: #664229; /* NOVO: Texto em Castanho Carvalho */
+    background-color: var(--color-white); /* Destaca do fundo creme */
+    margin: 60px auto;
+    padding: 60px 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
 }
 
-/* Formulário */
-form {
-    max-width: 500px;
-    margin: 20px auto 0 auto;
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(102, 66, 41, 0.15); /* Sombra ajustada ao tom castanho novo */
-    border: 1px solid #E0E0E0;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0 15px 0;
-    border: 1px solid #664229; /* NOVO: Borda dos inputs em Castanho Carvalho */
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #1E392A; /* Verde Floresta Profundo */
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #14261C; /* Verde mais escuro no hover */
-}
-
-/* Footer */
-footer {
-    background-color: #664229; /* NOVO: Fundo do rodapé em Castanho Carvalho */
-    color: #FFFFFF;
-    text-align: center;
-    padding: 15px;
+/* Mini Galeria na Home */
+.gallery-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
     margin-top: 30px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+.cta-center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Caixa de Contacto Home */
+.contact-box {
+    background-color: var(--color-forest-green);
+    color: var(--color-white);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact-box h3, .contact-box p, .contact-box address {
+    color: var(--color-white);
+}
+
+.contact-box .map-button {
+    background-color: var(--color-white);
+    color: var(--color-forest-green);
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.contact-box .map-button:hover {
+    background-color: var(--color-gold-accent);
+    color: var(--color-white);
+}
+
+/* ----------------------------------------------------------------------- */
+/* 6. SOBRE NÓS (sobre.html) - Estilos Consolidados */
+/* ----------------------------------------------------------------------- */
+.intro-banner {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #E8E4DF; /* Tom ligeiramente mais escuro que o body */
+    border-bottom: 4px solid var(--color-oak-brown);
+}
+
+.intro-banner img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--color-white);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 20px;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.main-text {
+    flex: 2;
+    min-width: 300px;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.side-info {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    border-top: 4px solid var(--color-forest-green);
+    height: fit-content;
+}
+
+.side-info h3 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--color-light-gray);
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+.side-info h3:first-child { margin-top: 0; }
+
+/* ----------------------------------------------------------------------- */
+/* 7. GALERIA (produtos.html) - Estilos Consolidados */
+/* ----------------------------------------------------------------------- */
+.no-padding-section {
+    padding-top: 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.product-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.product-card img {
+    width: 100%;
+    height: 350px; /* Altura generosa para mostrar detalhes */
+    object-fit: cover;
+    display: block;
+}
+
+/* ----------------------------------------------------------------------- */
+/* 8. CONTACTOS (contactos.html) - Estilos Consolidados */
+/* ----------------------------------------------------------------------- */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+@media (min-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr 1.2fr; /* Mapa ligeiramente maior */
+    }
+}
+
+.info-column h2 {
+    border-bottom: 2px solid var(--color-oak-brown);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.btn-social {
+    padding: 12px 24px;
+    border-radius: 50px; /* Botões arredondados (Pill shape) */
+    color: white !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-facebook { background-color: #3b5998; }
+.btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+.hours-box {
+    background-color: var(--color-white);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--color-forest-green);
+    box-shadow: var(--shadow-soft);
+}
+
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hours-table td {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--color-light-gray);
+}
+
+.map-column {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-hover);
+    height: 100%;
+    min-height: 500px;
+}
+
+.map-column iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border: 0;
+}
+
+/* ----------------------------------------------------------------------- */
+/* 9. FOOTER (Rodapé) */
+/* ----------------------------------------------------------------------- */
+footer {
+    background-color: var(--color-oak-brown);
+    color: var(--color-white);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
