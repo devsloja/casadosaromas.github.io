@@ -60,12 +60,12 @@ a:hover {
 }
 
 /* ----------------------------------------------------------------------- */
-/* 3. HEADER NAVEGAÇÃO (Sticky / Fixo) */
+/* 3. HEADER NAVEGAÇÃO (Centrado e Sticky) */
 /* ----------------------------------------------------------------------- */
 header {
     background-color: var(--color-forest-green);
     color: var(--color-white);
-    padding: 15px 40px;
+    padding: 15px 20px; /* Padding ligeiramente ajustado */
     
     /* Configuração Sticky - Fixa o menu no topo */
     position: sticky;
@@ -73,32 +73,38 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     
+    /* ALTERAÇÃO: Layout Centrado em Coluna */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column; /* Empilha Logo e Menu */
+    justify-content: center;
+    align-items: center; /* Centraliza horizontalmente */
 }
 
 header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--color-white);
-    margin: 0;
-    letter-spacing: 0.5px;
+    margin: 0 0 10px 0; /* Margem inferior para separar do menu */
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 header nav {
     display: flex;
-    gap: 20px;
+    gap: 30px; /* Aumentado o espaço entre links para "facil acesso" */
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 header nav a {
     color: rgba(255, 255, 255, 0.9);
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1rem; /* Ligeiramente maior para melhor clique/toque */
     padding: 5px 0;
     position: relative;
+    text-transform: uppercase; /* Opcional: dá um ar mais organizado */
+    letter-spacing: 0.5px;
 }
 
 /* Efeito de Sublinhado Animado no Menu */
