@@ -4,197 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início - Casa dos Aromas</title>
+    <!-- Ligação ao ficheiro de estilos externo (Toda a formatação está aqui) -->
     <link rel="stylesheet" href="style.css">
-    
-    <style>
-        /* CSS Específico para a Homepage */
-        
-        /* 1. Secção Hero/Banner (Tela Cheia) */
-        .hero-banner {
-            padding: 0;
-            border-bottom: none;
-            position: relative;
-            min-height: 85vh; /* Altura mínima para ser visível em ecrãs grandes */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            /* URL da imagem do banner */
-            background-image: url('https://scontent.fopo6-2.fna.fbcdn.net/v/t39.30808-6/482218833_1259760882398882_6742136871312125712_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=7qa5WjBjRjkQ7kNvwHkLMug&_nc_oc=Adm_cJmHpboLtlvYQETY_34-lr_7fCO9pyJCnoBcJ3no1UfGdrQMrGK8T3H9jAXW2rb7ZEPW_CkvL17pLUWHYtOO&_nc_zt=23&_nc_ht=scontent.fopo6-2.fna&_nc_gid=SgYF7JgWvF4MtXdHZ_5XEA&oh=00_Afip3xurQckLXlEcOnj4DayTBbI2nGvRrDw2DF_Crho5Tw&oe=692A78D5');
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(30, 57, 42, 0.4); /* Overlay em Verde Floresta transparente */
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            max-width: 90%;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-content h2 {
-            font-size: clamp(2.5em, 5vw, 4.5em); /* Responsivo e grande */
-            margin-bottom: 0.2em;
-            color: #FFFFFF;
-        }
-
-        .hero-content p {
-            font-size: clamp(1.2em, 2vw, 1.8em);
-            margin-bottom: 2em;
-            color: #F0F0F0;
-        }
-        
-        .hero-content .cta-button {
-            background-color: #664229; /* Castanho Carvalho como CTA principal */
-            color: white;
-            padding: 15px 30px;
-            border: 2px solid #664229;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        
-        .hero-content .cta-button:hover {
-            background-color: #A68B6C;
-            border-color: #A68B6C;
-            transform: scale(1.05);
-        }
-
-        /* NOVA SECÇÃO: Sobre Destaque */
-        .about-highlight {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-highlight h2 {
-            color: #1E392A; /* Verde Floresta */
-            margin-bottom: 20px;
-            font-size: 2.5em;
-        }
-
-        .about-highlight p {
-            font-size: 1.15em;
-            line-height: 1.8;
-            color: #664229; /* Castanho Carvalho */
-            margin-bottom: 30px;
-        }
-
-        .about-highlight .secondary-cta {
-            background-color: #1E392A; /* Verde Floresta */
-            color: white;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .about-highlight .secondary-cta:hover {
-            background-color: #3E6B49; /* Verde ligeiramente mais claro */
-        }
-        
-        /* 3. Pré-visualização de Produtos (Mini-Galeria) */
-        .gallery-preview {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 40px 20px;
-        }
-
-        .gallery-item {
-            flex-basis: 100%; /* Ocupa a largura total em mobile */
-            max-width: 350px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        @media (min-width: 600px) {
-            .gallery-item {
-                flex-basis: calc(33% - 20px);
-            }
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item img:hover {
-            transform: scale(1.1);
-        }
-        
-        .cta-center {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
-        
-        /* 4. Conexão Local/Contacto */
-        .contact-box {
-            background-color: #1E392A; /* Fundo Verde Floresta para contraste */
-            color: #FFFFFF;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .contact-box h3 {
-            color: #FFFFFF;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-
-        .contact-box p {
-            color: #F0F0F0;
-            font-size: 1.1em;
-            margin-bottom: 25px;
-        }
-
-        .contact-box .map-button {
-            background-color: #664229; /* Castanho Carvalho para destaque */
-            color: white;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-box .map-button:hover {
-            background-color: #8D5E3C;
-        }
-
-    </style>
 </head>
 <body>
+    
+    <!-- HEADER: Logótipo e Navegação -->
     <header>
-        <h1>Casa dos Aromas</h1>
+        <!-- Logótipo como Imagem e Link para a Home -->
+        <a href="index.html" class="logo-link" title="Ir para a Página Inicial">
+            <!-- Certifique-se que a imagem está na pasta 'imagens' -->
+            <img src="imagens/Gemini_Generated_Image_ctfu3hctfu3hctfu.jpg" 
+                 alt="Logótipo Casa dos Aromas - Decoração e Design" 
+                 class="logo-img">
+        </a>
+
+        <!-- Menu de Navegação -->
         <nav>
-            <a href="index.html">Início</a> |
-            <a href="sobre.html">Sobre Nós</a> |
-            <a href="produtos.html">Galeria</a> |
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="produtos.html">Galeria</a>
             <a href="contactos.html">Contactos</a>
         </nav>
     </header>
@@ -209,18 +38,18 @@
         </div>
     </section>
 
-    <!-- NOVA SECÇÃO: SOBRE NÓS/DESTAQUE (Substitui os 3 blocos) -->
+    <!-- 2. SECÇÃO DESTAQUE: SOBRE NÓS -->
     <section class="about-highlight">
         <h2>Tradição e Design em Cada Pormenor</h2>
         <p>Com uma trajetória consolidada que ultrapassa duas décadas, desde 1994, o nosso compromisso inabalável é transformar o seu lar, elevando o conforto e a estética de cada espaço. Localizados em Rio Tinto, Porto, oferecemos uma curadoria de peças distintas que abrangem móveis, têxteis e artigos para Cozinha e WC. Venha descobrir a excelência no serviço que nos torna a escolha preferida para a decoração.</p>
         <a href="sobre.html" class="secondary-cta">Ler a História Completa</a>
     </section>
     
-    <!-- 4. PRÉ-VISUALIZAÇÃO DE PRODUTOS -->
+    <!-- 3. PRÉ-VISUALIZAÇÃO DE PRODUTOS -->
     <section>
-        <h2 style="text-align: center; color: #1E392A; margin-bottom: 40px;">Algumas Inspirações da Nossa Galeria</h2>
+        <h2 style="text-align: center; color: var(--color-forest-green); margin-bottom: 40px;">Algumas Inspirações da Nossa Galeria</h2>
         
-        <!-- Mini-Galeria: Usando 3 URLs da página de produtos -->
+        <!-- Mini-Galeria -->
         <div class="gallery-preview">
             <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/p/AF1QipPXOf-u1yDdUq4N5YUyL24hF1Xmw1Vs2lF4-1zd=s680-w680-h510-rw" alt="Cozinha com Bancada de Madeira">
@@ -238,7 +67,7 @@
         </div>
     </section>
 
-    <!-- 5. CONEXÃO LOCAL/CONTACTO -->
+    <!-- 4. CONEXÃO LOCAL/CONTACTO -->
     <div class="contact-box">
         <h3>Visite a Nossa Loja</h3>
         <p>Gostaria de ver os nossos artigos de perto? Estamos em Rio Tinto, à sua espera.</p>
@@ -251,7 +80,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 Casa dos Aromas | <a href="contactos.html">Contacta-nos</a></p>
+        <p>&copy; 2025 Casa dos Aromas | <a href="contactos.html" style="color: var(--color-white); text-decoration: underline;">Contacta-nos</a></p>
     </footer>
 </body>
 </html>
