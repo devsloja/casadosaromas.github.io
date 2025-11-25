@@ -58,18 +58,21 @@ a:hover {
 }
 
 /* ----------------------------------------------------------------------- */
-/* 3. HEADER NAVEGAÇÃO (ALTERADO: Logo Esq, Menu Centro) */
+/* 3. HEADER NAVEGAÇÃO (ALTERADO: Mobile Sticky Fix) */
 /* ----------------------------------------------------------------------- */
 header {
     background-color: var(--color-forest-green);
     color: var(--color-white);
     padding: 15px 40px; 
     
-    position: sticky;
+    /* Mantém o comportamento STICKY (Fixa no topo ao fazer scroll) */
+    position: sticky; 
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    width: 100%; /* Garante que ocupa a largura total */
     
+    /* LAYOUT EM GRID (Desktop) */
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center; 
@@ -146,6 +149,14 @@ header nav a:hover::after {
         align-items: center;
         padding: 15px 20px;
         gap: 15px;
+        
+        /* Otimização Mobile: Se o STICKY falhar ou for incómodo, usar FIXED */
+        /* position: fixed; 
+        width: 100%;
+        left: 0;
+        top: 0;
+        margin-bottom: 15px; */
+        /* Nota: Por padrão, o sticky deve funcionar, mas deixo o fixed comentado como alternativa */
     }
     
     .logo-link {
@@ -408,9 +419,9 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
-    margin: 40px auto; /* Centrado com margem superior */
-    padding: 0 40px; /* NOVO: Espaçamento lateral para afastar da "parede" */
-    max-width: 1200px; /* Limite de largura para não esticar demasiado */
+    margin: 40px auto;
+    padding: 0 40px; 
+    max-width: 1200px;
 }
 
 @media (min-width: 900px) {
